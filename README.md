@@ -1,24 +1,36 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column             | Type   | Options                  |
+| ------------------ | ------ | ------------------------ |
+| email              | string | null: false, unique:true |
+| encrypted_password | string | null: false              |
 
-* Ruby version
 
-* System dependencies
+### Association
 
-* Configuration
 
-* Database creation
+## familys テーブル
 
-* Database initialization
+| Column         | Type   | Options                              |
+| -------------- | ------ | ------------------------------------ |
+| name           | string | null: false, unique:true             |
+| type_id        | string | null: false                          |
+| user           | references   | null: false, foreign_key: true |
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+### Association
 
-* Deployment instructions
 
-* ...
+## unkos テーブル
+
+| Column             | Type         | Options                        |
+| ------------------ | ------------ | ------------------------------ |
+| state_id           | string       | null: false                    |
+| detail             | text         | null: false                    |
+| family             | references   | null: false, foreign_key: true |
+
+
+
+### Association
