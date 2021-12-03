@@ -9,28 +9,31 @@
 
 
 ### Association
+- has_many :humans
 
 
-## familys テーブル
+## humans テーブル
 
-| Column         | Type   | Options                              |
-| -------------- | ------ | ------------------------------------ |
-| name           | string | null: false, unique:true             |
-| type_id        | string | null: false                          |
+| Column         | Type         | Options                        |
+| -------------- | ------------ | ------------------------------ |
+| name           | string       | null: false, unique:true       |
+| type_id        | integer      | null: false                    |
 | user           | references   | null: false, foreign_key: true |
 
 
 ### Association
+- has_many :poops
+- belongs_to :user
 
-
-## unkos テーブル
+## poops テーブル
 
 | Column             | Type         | Options                        |
 | ------------------ | ------------ | ------------------------------ |
-| state_id           | string       | null: false                    |
+| state_id           | integer      | null: false                    |
 | detail             | text         | null: false                    |
 | family             | references   | null: false, foreign_key: true |
 
 
 
 ### Association
+- belongs_to :humans
