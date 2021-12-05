@@ -10,13 +10,11 @@
     <div class="form-tag">名前</div>
     <%= form.text_field :name %>
   </div>
-
-
   <div class="content">
     <div class="form-tag">種類</div>
-    <%= form.text_field :content %>
-  </div>
-   <div class="submit">
+    <%= f.collection_select(:type_id, Type.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+    </div>
+  <div class="submit">
     <%= form.submit %>
- </div>
+  </div>
 <% end %>
