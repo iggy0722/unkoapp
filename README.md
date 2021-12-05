@@ -33,7 +33,7 @@
 | detail             | text         |                                |
 | weight_id          | integer      | null: false                    |
 | start_time         | datetime     | null: false                    |
-| family             | references   | null: false, foreign_key: true |
+| human              | references   | null: false, foreign_key: true |
 
 
 
