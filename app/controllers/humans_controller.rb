@@ -1,7 +1,10 @@
 class HumansController < ApplicationController
   before_action :set_human, only: [:show , :edit , :update, :destroy]
+  before_action :authenticate_user!
+  before_action :move_to_index,only: [:new ,:create ,:show , :edit , :update, :destroy]
   def index
-    @humans = Human.all
+    user = User.find(params[:id])
+    @humans = user.humans
   end
 
   def new
@@ -36,6 +39,8 @@ class HumansController < ApplicationController
     redirect_to humans_path, notice:"削除しました"
   end
 
+
+
   private
   def human_parameter
     params.permit(:name,:type_id).merge(user_id: current_user.id)
@@ -47,6 +52,12 @@ class HumansController < ApplicationController
 
   def set_human
     @human = Human.find(params[:id])
+  end
+
+  def move_to_index
+    if authenticate_user!
+    redirect_to action: :index unless current_user.id == @human.user.id
+    end
   end
 
 end

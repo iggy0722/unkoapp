@@ -18,9 +18,9 @@
     <%= f.submit %>
   </div>
 <% end %>
-
 <% @humans.each do |human| %>
-  <tr>
-    <td><%= link_to human.name ,human_path(human.id) %></td>
-  </tr>
+    <tr>
+      <td><%= link_to human.name ,human_path(human.id) %></td>
+    </tr>
+
 <% end %>
