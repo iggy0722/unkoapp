@@ -11,7 +11,7 @@
 </p>
 
 
-<%= link_to '編集', "#" %>
+<%= link_to '編集', edit_human_path(@human.id) %>
 <%= link_to '消去',"#", method: :delete, data: { confirm: '本当に?' } %>
 <%= link_to '戻る', root_path %>
 </div>
