@@ -1,5 +1,5 @@
 class HumansController < ApplicationController
-  before_action :set_human, only: [:show , :edit , :update]
+  before_action :set_human, only: [:show , :edit , :update, :destroy]
   def index
     @humans = Human.all
   end
@@ -29,6 +29,11 @@ class HumansController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @human.destroy
+    redirect_to humans_path, notice:"削除しました"
   end
 
   private
