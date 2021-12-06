@@ -3,7 +3,7 @@ class HumansController < ApplicationController
   before_action :authenticate_user!
   before_action :move_to_index,only: [:new ,:create ,:show , :edit , :update, :destroy]
   def index
-    user = User.find(params[:id])
+    user = current_user
     @humans = user.humans
   end
 
