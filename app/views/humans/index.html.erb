@@ -21,6 +21,6 @@
 
 <% @humans.each do |human| %>
   <tr>
-    <td><%= link_to human.name ,"#"  %></td>
+    <td><%= link_to human.name ,human_path(human.id) %></td>
   </tr>
 <% end %>

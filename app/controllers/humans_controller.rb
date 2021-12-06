@@ -18,6 +18,10 @@ class HumansController < ApplicationController
     end
   end
 
+  def show
+    @human = Human.find(params[:id])
+  end
+
   private
 
   def human_params
