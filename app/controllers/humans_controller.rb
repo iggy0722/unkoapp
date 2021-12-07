@@ -1,7 +1,7 @@
 class HumansController < ApplicationController
+  protect_from_forgery
   before_action :set_human, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  before_action :move_to_index, only: [:new, :create, :show, :edit, :update, :destroy]
   def index
     user = current_user
     @humans = user.humans
@@ -53,7 +53,4 @@ class HumansController < ApplicationController
     @human = Human.find(params[:id])
   end
 
-  def move_to_index
-    redirect_to action: :index if authenticate_user! && !(current_user.id == @human.user.id)
-  end
 end
