@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "humans#index"
-  resources :humans
+  resources :humans do
+    resources :poops, only:[:index, :create]
+  end
 end
