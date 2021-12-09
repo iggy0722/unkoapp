@@ -1,7 +1,6 @@
 class PoopsController < ApplicationController
-
   def index
-    
+    @poops = Poop.all
   end
   
   def new
@@ -9,8 +8,8 @@ class PoopsController < ApplicationController
   end
 
   def create
-    @poop = Poop.create(poop_params)
-    if @poop.save
+    poop = Poop.create(poop_params)
+    if poop.save
       redirect_to root_path
     else
       redirect_to root_path
@@ -23,4 +22,6 @@ class PoopsController < ApplicationController
   def poop_params
     params.require(:poop).permit(:state_id, :detail, :weight_id, :start_time).merge(user_id: current_user.id, human_id: params[:human_id])
   end
+
+
 end
