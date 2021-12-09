@@ -16,11 +16,13 @@ class HumansController < ApplicationController
     if @human.save
       redirect_to root_path
     else
-      render :new
+      redirect_to root_path
     end
   end
 
   def show
+    @poop = Poop.new
+    @poops = @human.poops.includes(:user)
   end
 
   def edit
@@ -37,7 +39,7 @@ class HumansController < ApplicationController
 
   def destroy
     @human.destroy
-    redirect_to humans_path, notice: '削除しました'
+    redirect_to humans_path
   end
 
   private
