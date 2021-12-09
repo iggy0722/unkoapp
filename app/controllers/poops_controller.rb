@@ -10,8 +10,11 @@ class PoopsController < ApplicationController
 
   def create
     @poop = Poop.create(poop_params)
-    @poop.save!
-    redirect_to root_path
+    if @poop.save
+      redirect_to root_path
+    else
+      redirect_to root_path
+    end
   end
 
 

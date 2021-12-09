@@ -18,6 +18,7 @@
     <%= f.submit %>
   </div>
 <% end %>
+<h4>＜ユーザー一覧＞</h4>
 <% @humans.each do |human| %>
     <tr>
       <td><%= link_to human.name ,human_path(human.id) %></td>

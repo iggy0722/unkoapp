@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 <div class="show">
+
+
 <p>
   <strong>名前</strong>
   <%= @human.name %>
@@ -15,6 +17,15 @@
 <%= link_to '消去',"#", method: :delete, data: { confirm: '本当に?' } %>
 <%= link_to '戻る', root_path %>
 </div>
+  <% unless @poops.length == 0 %>
+    <% time1 = Date.today %>
+    <% time1 %>
+    <% time2 = @poops.last %>
+    <% time2 = time2.start_time %>
+    <% time2 %>
+    <% time3 = time1 - Date.parse(time2.to_s) %>
+    <h1><%= time3.to_i %>日もうんちが出ていません</h1>
+  <% end %>
 <p>
 <%= form_with model: @poop, url:human_poops_path(@human), method: :post, local: true do |f| %>
   <div class="article-box">

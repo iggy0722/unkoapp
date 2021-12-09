@@ -22,6 +22,7 @@ class HumansController < ApplicationController
 
   def show
     @poop = Poop.new
+    @poops = @human.poops.includes(:user)
   end
 
   def edit
