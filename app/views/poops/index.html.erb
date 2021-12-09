@@ -1,0 +1,15 @@
+<br>
+
+
+<br>
+<div class="col-md-8">
+<%= month_calendar events: @poops do |date, poops| %>
+  <%= date.day %>
+
+  <% poops.each do |poop| %>
+    <%= poop.state.name %>
+  <% end %>
+<% end %>
+</div>
+</div>
+</div>
