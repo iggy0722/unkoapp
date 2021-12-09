@@ -16,13 +16,15 @@
 <%= link_to '戻る', root_path %>
 </div>
 <p>
-<%= form_with model: @poop, url:human_poops_path(@human), method: :create, local: true do |f| %>
+<%= form_with model: @poop, url:human_poops_path(@human), method: :post, local: true do |f| %>
   <div class="article-box">
     記事を投稿する
-    <%= f.collection_select(:state_id, State.all, :id, :name, {}, {class:"genre-select"}) %>
-    <%= f.collection_select(:weight_id, Weight.all, :id, :name, {}, {class:"genre-select"}) %>
-    <%= f.text_area :detail, class:"text", placeholder:"詳細" %>
-    <%= f.submit "投稿する" ,class:"btn" %>
+    <p><%= f.collection_select(:state_id, State.all, :id, :name, {}, {class:"genre-select"}) %></p>
+    <p><%= f.collection_select(:weight_id, Weight.all, :id, :name, {}, {class:"genre-select"}) %></p>
+    <p><%= f.text_area :detail, class:"text", placeholder:"詳細" %></p>
+    <p><%= f.datetime_select :start_time %></p>
+  </div>
+    <p><%= f.submit "投稿する" ,class:"btn" %></p>
   </div>
 <% end %>
 </p>

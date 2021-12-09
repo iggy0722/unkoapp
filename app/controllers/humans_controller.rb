@@ -21,6 +21,7 @@ class HumansController < ApplicationController
   end
 
   def show
+    @poop = Poop.new
   end
 
   def edit

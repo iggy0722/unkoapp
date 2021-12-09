@@ -6,6 +6,7 @@ class CreatePoops < ActiveRecord::Migration[6.0]
       t.integer    :weight_id
       t.datetime   :start_time, null: false
       t.references :human,      null: false, foreign_key: true
+      t.references :user,       null: false, foreign_key: true
 
       t.timestamps
     end

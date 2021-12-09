@@ -1,6 +1,7 @@
 class Poop < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :humans
+  belongs_to :user
+  belongs_to :humans, optional: true
   belongs_to :state
   belongs_to :weight
 

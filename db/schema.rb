@@ -27,9 +27,11 @@ ActiveRecord::Schema.define(version: 2021_12_07_064508) do
     t.integer "weight_id"
     t.datetime "start_time", null: false
     t.bigint "human_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["human_id"], name: "index_poops_on_human_id"
+    t.index ["user_id"], name: "index_poops_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -46,4 +48,5 @@ ActiveRecord::Schema.define(version: 2021_12_07_064508) do
 
   add_foreign_key "humen", "users"
   add_foreign_key "poops", "humen"
+  add_foreign_key "poops", "users"
 end
