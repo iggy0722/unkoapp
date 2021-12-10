@@ -1,6 +1,7 @@
 class PoopsController < ApplicationController
+  before_action :human_set
   def index
-    @poops = Poop.all
+    @poops = @human.poops
   end
   
   def new
@@ -23,5 +24,8 @@ class PoopsController < ApplicationController
     params.require(:poop).permit(:state_id, :detail, :weight_id, :start_time).merge(user_id: current_user.id, human_id: params[:human_id])
   end
 
+  def human_set
+    @human = Human.find(params[:human_id])
+  end
 
 end
