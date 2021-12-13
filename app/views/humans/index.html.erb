@@ -1,11 +1,9 @@
-<link rel = "preconnect" href = "https://fonts.googleapis.com">
-<link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
-<link href = "https： //fonts.googleapis.com/css2？family = M + PLUS + 1p：wght @ 500＆ display = swap "rel =" stylesheet ">
+
 <% if !user_signed_in? %>
   <%= link_to "ログイン", new_user_session_path, class: "post" %>
   <%= link_to "新規登録", new_user_registration_path, class: "post" %>
 <% end %>
-<p>ウンチ日記</p>
+<p>うんち日記</p>
 <%= form_with(model: @human, url: humans_path, method: :create, local: true) do |f| %>
 
   <div class="title">
