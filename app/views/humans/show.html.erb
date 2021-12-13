@@ -2,12 +2,12 @@
 <div class="show">
 
 
-<p>
+<p class='poop-title' >
   <strong>名前</strong>
   <%= @human.name %>
 </p>
 
-<p>
+<p class='poop-title'>
   <strong>種類</strong>
   <%= @human.type.name %>
 </p>
@@ -24,18 +24,20 @@
     <% time2 = time2.start_time %>
     <% time2 %>
     <% time3 = time1 - Date.parse(time2.to_s) %>
-    <h1><%= time3.to_i %>日もうんちが出ていません</h1>
+    <h1 class='poop-title'>
+    <%= time3.to_i %>日もうんちが出ていません
+    </h1>
   <% end %>
 <p>
 <%= form_with model: @poop, url:human_poops_path(@human), method: :post, local: true do |f| %>
-  <div class="article-box">
+  <div class='poop-title'>
     記事を投稿する
     <p><%= f.collection_select(:state_id, State.all, :id, :name, {}, {class:"genre-select"}) %></p>
     <p><%= f.collection_select(:weight_id, Weight.all, :id, :name, {}, {class:"genre-select"}) %></p>
     <p><%= f.text_area :detail, class:"text", placeholder:"詳細" %></p>
     <p><%= f.datetime_select :start_time %></p>
   </div>
-    <p><%= f.submit "投稿する" ,class:"btn" %></p>
+    <p class='poop-title'><%= f.submit "投稿する" ,class:"btn" %></p>
   </div>
 <% end %>
 </p>
