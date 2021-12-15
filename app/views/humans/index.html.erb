@@ -3,23 +3,22 @@
   <%= link_to "ログイン", new_user_session_path, class: "post" %>
   <%= link_to "新規登録", new_user_registration_path, class: "post" %>
 <% end %>
-<div class="poop-title">
-  <p>うんち日記</p>
+<div class="show">
   <%= form_with(model: @human, url: humans_path, method: :create, local: true) do |f| %>
 
-    <div class="title">
+    <div class="text_center">
       <div class="form-tag">名前</div>
       <%= f.text_field :name %>
      </div>
-    <div class="content">
+    <div class="text_center">
       <div class="form-tag">種類</div>
       <%= f.collection_select(:type_id, Type.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
       </div>
-    <div class="submit">
+    <div class="text_center">
       <%= f.submit %>
     </div>
   <% end %>
-  <h4>＜ユーザー一覧＞</h4>
+  <h1 class='text_center'>＜ユーザー一覧＞</h1>
   <% @humans.each do |human| %>
       <div class= "poop-title">
         <%= link_to human.name ,human_path(human.id) %>
