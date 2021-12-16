@@ -3,7 +3,7 @@
   <%= link_to "ログイン", new_user_session_path, class: "post" %>
   <%= link_to "新規登録", new_user_registration_path, class: "post" %>
 <% end %>
-<div class="show">
+<div class="show_index">
   <%= form_with(model: @human, url: humans_path, method: :create, local: true) do |f| %>
 
     <div class="text_center">
@@ -18,10 +18,16 @@
       <%= f.submit %>
     </div>
   <% end %>
+  <br>
   <h1 class='text_center'>＜ユーザー一覧＞</h1>
+  <br>
   <% @humans.each do |human| %>
-      <div class= "poop-title">
-        <%= link_to human.name ,human_path(human.id) %>
-      </div>
+      <p class= "text_center">
+        <%= human.name %>
+        <%= link_to human_path(human.id),class: "btn btn-border" do %>
+          <span>記録する</span>
+        <% end %>
+      </p>
+  <% end %>
 </div>
-<% end %>
+

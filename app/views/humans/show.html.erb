@@ -7,7 +7,6 @@
     <%= @human.type.name %>
   </p>
   <div class='text_center'>
-    <a href="/"class="btn btn-border"><span>戻る</span></a>
     <%= link_to edit_human_path(@human.id),class: "btn btn-border" do %>
       <span>編集</span>
     <% end %>
