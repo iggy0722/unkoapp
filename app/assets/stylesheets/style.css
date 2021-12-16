@@ -17,3 +17,7 @@
   background-color: aqua;
   display: flexbox
 }
+
+.logo{
+  object-fit: contain;
+}
