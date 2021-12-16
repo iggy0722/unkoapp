@@ -6,9 +6,6 @@
 }
 
 .grid-6 {
-  font-family: 'Kaisei Decol', serif;
-  font-size: 50px;
-  padding-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,4 +16,8 @@
   height: 20vh;
   background-color: aqua;
   display: flexbox
+}
+
+.logo{
+  object-fit: contain;
 }

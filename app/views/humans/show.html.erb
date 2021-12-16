@@ -1,44 +1,44 @@
 <p id="notice"><%= notice %></p>
 <div class="show">
-
-
-<p class='poop-title' >
-  <strong>名前</strong>
-  <%= @human.name %>
-</p>
-
-<p class='poop-title'>
-  <strong>種類</strong>
-  <%= @human.type.name %>
-</p>
-
-
-<%= link_to '編集', edit_human_path(@human.id) %>
-<%= link_to '消去',"#", method: :delete, data: { confirm: '本当に?' } %>
-<%= link_to '戻る', root_path %>
-</div>
+  <p class= 'text_center' >
+    <%= @human.name %>
+  </p>
+  <p class='text_center'>
+    <%= @human.type.name %>
+  </p>
+  <div class='text_center'>
+    <%= link_to edit_human_path(@human.id),class: "btn btn-border" do %>
+      <span>編集</span>
+    <% end %>
+    <%= link_to human_path(@human.id),method: :delete, class: "btn btn-border" do %>
+      <span>消去</span>
+    <% end %>
+  </div>
   <% unless @poops.length == 0 %>
     <% time1 = Date.today %>
-    <% time1 %>
     <% time2 = @poops.last %>
     <% time2 = time2.start_time %>
-    <% time2 %>
     <% time3 = time1 - Date.parse(time2.to_s) %>
-    <h1 class='poop-title'>
-    <%= time3.to_i %>日もうんちが出ていません
-    </h1>
+    <p class='text_center'>
+    <%= time3.to_i %>日も<span class='poop_color'>うんち</span>が出ていません
+    </p>
   <% end %>
-<p>
-<%= form_with model: @poop, url:human_poops_path(@human), method: :post, local: true do |f| %>
-  <div class='poop-title'>
-    記事を投稿する
-    <p><%= f.collection_select(:state_id, State.all, :id, :name, {}, {class:"genre-select"}) %></p>
-    <p><%= f.collection_select(:weight_id, Weight.all, :id, :name, {}, {class:"genre-select"}) %></p>
-    <p><%= f.text_area :detail, class:"text", placeholder:"詳細" %></p>
-    <p><%= f.datetime_select :start_time %></p>
-  </div>
-    <p class='poop-title'><%= f.submit "投稿する" ,class:"btn" %></p>
-  </div>
-<% end %>
-</p>
-<%= link_to 'カレンダー', human_poops_path(@human) %>
+  <p class='text_center'>
+    <%= link_to 'カレンダーを見る', human_poops_path(@human) %>
+  </p>
+  <p>
+    <%= form_with model: @poop, url:human_poops_path(@human), method: :post, local: true do |f| %>
+      <div class='text_center'>
+        うんちを記録する
+      </div>
+      <p class='text_center'>状態<%= f.collection_select(:state_id, State.all, :id, :name, {}, {class:"genre-select"}) %></p>
+      <p class='text_center'>大きさ<%= f.collection_select(:weight_id, Weight.all, :id, :name, {}, {class:"genre-select"}) %></p>
+      <p class='text_center'><%= f.text_area :detail, class:"text", placeholder:"備考" %></p>
+      <p class='text_center'><%= f.datetime_select :start_time %></p>
+      <p class='text_center'>
+        <%= button_tag sanitize('<span>送信</span>'), :type => "submit",:class =>"btn btn-border" %>
+      </p>  
+    <% end %>
+  </p>
+</div>
+

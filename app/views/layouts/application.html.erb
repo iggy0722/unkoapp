@@ -10,13 +10,15 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@700&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <header class="header">
       <div class="header__bar">
-        <h1 class="grid-6">うんち日記</h1>
+        <div class="grid-6">
+        <%= link_to image_tag( "うんち日記.png", size: "200x200",class: :logo ), root_path %>
+        </div>
       </div>
     </header>
     <%= yield %>

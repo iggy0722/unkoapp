@@ -11,7 +11,7 @@ class PoopsController < ApplicationController
   def create
     poop = Poop.create(poop_params)
     if poop.save
-      redirect_to root_path
+      redirect_to human_poops_path(@human)
     else
       redirect_to root_path
     end
