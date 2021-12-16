@@ -33,7 +33,7 @@
       </div>
       <p class='text_center'>状態<%= f.collection_select(:state_id, State.all, :id, :name, {}, {class:"genre-select"}) %></p>
       <p class='text_center'>大きさ<%= f.collection_select(:weight_id, Weight.all, :id, :name, {}, {class:"genre-select"}) %></p>
-      <p class='text_center'><%= f.text_area :detail, class:"text", placeholder:"詳細" %></p>
+      <p class='text_center'><%= f.text_area :detail, class:"text", placeholder:"備考" %></p>
       <p class='text_center'><%= f.datetime_select :start_time %></p>
       <p class='text_center'>
         <%= button_tag sanitize('<span>送信</span>'), :type => "submit",:class =>"btn btn-border" %>
