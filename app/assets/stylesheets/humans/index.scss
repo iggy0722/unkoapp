@@ -49,6 +49,8 @@ a.btn-border {
   transition: all 0.3s;
 
   border-radius: 0;
+
+  margin-left : 10px;
 }
 
 a.btn-border span {
@@ -142,4 +144,12 @@ a.btn-border:active:before {
 }
 .name_padding{
   padding-right: 10px;
+}
+
+.form-tag{
+  margin-right : 10px;
+}
+
+.genre-select{
+  margin-left : 10px;
 }
