@@ -1,6 +1,6 @@
 .header__bar {
   width: 100vw;
-  height: 20vh;
+  height: 30vh;
   background-color: aqua;
   display: flexbox
 }
@@ -9,15 +9,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .footer__bar{
   width: 100vw;
-  height: 20vh;
+  height: 50px;
   background-color: aqua;
   display: flexbox
 }
 
 .logo{
   object-fit: contain;
+  width: 40vw;
+  height: 200px;
 }
