@@ -1,6 +1,6 @@
 .header__bar {
   width: 100vw;
-  height: 30vh;
+  height: 25vh;
   background-color: aqua;
   display: flexbox
 }
