@@ -10,19 +10,19 @@
 
   <% poops.each do |poop| %>
     <% if poop.state.id == 2 %>
-      <%= image_tag "普通.png", size: "50x50",class: 'image' %>
+      <%= image_tag "普通.png",class: 'image' %>
     <% elsif poop.state.id == 3 %>
-      <%= image_tag "コロコロ.png", size: "50x50",class: 'image'%>
+      <%= image_tag "コロコロ.png",class: 'image'%>
     <% elsif poop.state.id == 4 %>
-      <%= image_tag "カチカチ.png", size: "50x50",class: 'image'%>
+      <%= image_tag "カチカチ.png",class: 'image'%>
     <% elsif poop.state.id == 5 %>
-      <%= image_tag "ちょいかた.png", size: "50x50",class: 'image'%>
+      <%= image_tag "ちょいかた.png",class: 'image'%>
     <% elsif poop.state.id == 6 %>
-      <%= image_tag "dorodoro.png", size: "50x50",class: 'image'%>
+      <%= image_tag "dorodoro.png",class: 'image'%>
     <% elsif poop.state.id == 7 %>
-      <%= image_tag "bitya.png", size: "50x50",class: 'image'%>
+      <%= image_tag "bitya.png",class: 'image'%>
     <% elsif poop.state.id == 8 %>
-      <%= image_tag "不消化.png", size: "50x50",class: 'image'%>
+      <%= image_tag "不消化.png",class: 'image'%>
     <% end %>
   <% end %>
 <% end %>

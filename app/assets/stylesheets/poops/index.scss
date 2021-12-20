@@ -1,7 +1,22 @@
 .col-md-8{
   font-family: 'Kaisei Decol', serif;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
 }
 .image{
+  width: 60%;
+  height: 60%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  object-fit: contain;
+.calendar-heading{
+  text-align: center;
+}
+.simple-calendar{
+  display: block;
+  margin-left: auto;
+  margin-right: auto
 }
