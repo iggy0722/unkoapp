@@ -19,6 +19,7 @@ email: a@gmail.com
 https://docs.google.com/spreadsheets/d/1vyWtv-BmdzHwguYXlDhFCEdkmLHPOwSfXRg2o3a1UZY/edit#gid=982722306
 # 実装予定の機能
 写真を添付できるようにする。（実際病院などで必要になる事が多いため）
+
 ペットによってうんちの絵を代わるようにする（飼い主の方の管理を楽しくしてもらうため）
 # テーブル設計
 
