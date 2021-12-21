@@ -19,9 +19,35 @@
     <% time2 = @poops.last %>
     <% time2 = time2.start_time %>
     <% time3 = time1 - Date.parse(time2.to_s) %>
+    <% time3 = time3.to_i %>
     <p class='text_center'>
-    <%= time3.to_i %>日も<span class='poop_color'>うんち</span>が出ていません
+      <% if time3 == 0%>
+        素晴らしい！！この調子で続けていきましょう！
+      <% else %>
+        <%= time3 %>日も<span class='poop_color'>うんち</span>が出ていません
+      <% end %>
     </p>
+    <div class='text_center'>
+      <% if time3 == 0 %>
+        <%= image_tag '0日.png',class: 'image__last' %>
+      <% elsif time3 == 1 %>
+        <%= image_tag '1日.png',class: 'image__last'%>
+      <% elsif time3 == 2 %>
+        <%= image_tag '2日.png',class: 'image__last'%>
+      <% elsif time3 == 3 %>
+        <%= image_tag '3日.png',class: 'image__last'%>
+      <% elsif time3 == 4 %>
+        <%= image_tag '4日.png',class: 'image__last'%>
+      <% elsif time3 == 5 %>
+        <%= image_tag '5日.png',class: 'image__last'%>
+      <% elsif time3 == 6 %>
+        <%= image_tag '6日.png',class: 'image__last'%>
+      <% elsif time3 == 7 %>
+        <%= image_tag '7日.png',class: 'image__last'%>
+      <% else %>
+        <%= image_tag '遺影.png',class: 'image__last'%>
+      <% end %>
+    </div>
   <% end %>
   <p class='text_center'>
     <%= link_to 'カレンダーを見る', human_poops_path(@human) %>
