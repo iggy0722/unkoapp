@@ -1,5 +1,5 @@
 # アプリケーション名
-うんち日記
+![うんち日記](https://user-images.githubusercontent.com/93369812/146731580-91ec5d19-4a98-4e1f-ae49-304f14688dca.png)
 # 概要
 
 
