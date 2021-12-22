@@ -1,13 +1,26 @@
-<div class=show>
-<%= form_with(model: @human, local: true) do |f| %>
-
-  <div class="title">
-    <div class="form-tag">名前</div>
-    <%= f.text_field :name %>
+<div class="show_index">
+  <br>
+  <div class="text_center">
+    編集してください
   </div>
-  <div class="content">
-    <div class="form-tag">種類</div>
-    <%= f.collection_select(:type_id, Type.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+  <br>
+  <%= form_with(model: @human, local: true) do |f| %>
+
+    <div class="text_center">
+      <div class="form-tag">
+        名前
+      </div>
+      <%= f.text_field :name %>
     </div>
-    <%= f.submit %>
-<% end %>
+    <div class="text_center">
+      <div class="form-tag">
+        種類
+      </div>
+      <%= f.collection_select(:type_id, Type.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+    </div>
+    <br>
+    <div class='text_center'>
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>

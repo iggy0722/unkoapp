@@ -139,7 +139,7 @@ a.btn-border:active:before {
   justify-content: center;
   font-family: 'Kaisei Decol', serif;
   font-size: 30px;
-  height: 60vh;
+  height: 100vh;
   background-color: #FFFFF0;
 }
 .name_padding{
@@ -157,4 +157,10 @@ a.btn-border:active:before {
 .image__last{
   width: 40%;
   height: 40%;
+}
+.text_main{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  font-size: 40px;
 }

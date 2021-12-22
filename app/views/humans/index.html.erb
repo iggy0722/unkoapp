@@ -4,6 +4,8 @@
   <%= link_to "新規登録", new_user_registration_path, class: "post" %>
 <% end %>
 <div class="show_index">
+  <br>
+  <br>
   <%= form_with(model: @human, url: humans_path, method: :create, local: true) do |f| %>
 
     <div class="text_center">
@@ -11,7 +13,7 @@
       <%= f.text_field :name %>
      </div>
     <div class="text_center">
-      <div class="form-tag">種類</div>
+      <div class="form-tag">科・目</div>
       <%= f.collection_select(:type_id, Type.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
       </div>
     <div class="text_center">
