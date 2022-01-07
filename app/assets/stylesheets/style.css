@@ -14,7 +14,7 @@
 
 .footer__bar{
   width: 100vw;
-  height: 50px;
+  height: 25vh;
   background-color: aqua;
   display: flexbox
 }
