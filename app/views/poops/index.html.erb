@@ -3,34 +3,14 @@
   <%= @human.name %>のうんち日記
 <br>
 
-<div class="col-md-8">
-<%= month_calendar events: @poops do |date, poops| %>
-  <div class=day_font>
-    <%= date.day %>
-  </div>
+  <div class="col-md-8">
+  <%= month_calendar events: @poops do |date, poops| %>
+    <div class=day_font>
+      <%= date.day %>
+    </div>
 
-  <% poops.each do |poop| %>
-    <% if poop.state.id == 2 %>
-      <% if @poops.length > 3 %>
-        <% @car = @poops.last(3) %>
-        <% if @car[0][:state_id] == @car[1][:state_id] && @car[0][:state_id] == @car[2][:state_id] %>
-          <%= image_tag "王子様.png",class: 'image' %>
-        <% elsif poop.state.id == 2 %>
-          <%= image_tag "普通.png",class: 'image'%>
-        <% elsif poop.state.id == 3 %>
-          <%= image_tag "コロコロ.png",class: 'image'%>
-        <% elsif poop.state.id == 4 %>
-          <%= image_tag "カチカチ.png",class: 'image'%>
-        <% elsif poop.state.id == 5 %>
-          <%= image_tag "ちょいかた.png",class: 'image'%>
-        <% elsif poop.state.id == 6 %>
-          <%= image_tag "dorodoro.png",class: 'image'%>
-        <% elsif poop.state.id == 7 %>
-          <%= image_tag "bitya.png",class: 'image'%>
-        <% elsif poop.state.id == 8 %>
-          <%= image_tag "不消化.png",class: 'image'%>
-        <% end %>
-      <% elsif poop.state.id == 2 %>
+    <% poops.each do |poop| %>
+      <% if poop.state.id == 2 %>
         <%= image_tag "普通.png",class: 'image'%>
       <% elsif poop.state.id == 3 %>
         <%= image_tag "コロコロ.png",class: 'image'%>
@@ -45,21 +25,6 @@
       <% elsif poop.state.id == 8 %>
         <%= image_tag "不消化.png",class: 'image'%>
       <% end %>
-    <% elsif poop.state.id == 2 %>
-      <%= image_tag "普通.png",class: 'image'%>
-    <% elsif poop.state.id == 3 %>
-      <%= image_tag "コロコロ.png",class: 'image'%>
-    <% elsif poop.state.id == 4 %>
-      <%= image_tag "カチカチ.png",class: 'image'%>
-    <% elsif poop.state.id == 5 %>
-      <%= image_tag "ちょいかた.png",class: 'image'%>
-    <% elsif poop.state.id == 6 %>
-      <%= image_tag "dorodoro.png",class: 'image'%>
-    <% elsif poop.state.id == 7 %>
-      <%= image_tag "bitya.png",class: 'image'%>
-    <% elsif poop.state.id == 8 %>
-      <%= image_tag "不消化.png",class: 'image'%>
     <% end %>
   <% end %>
-<% end %>
 </div>
